@@ -1,5 +1,5 @@
 import React from 'react'
-import BasketCardItem from '../basketCardItem/sketCardItem'
+import BasketCardItem from '../basketCardItem/basketCardItem'
 
 
 const Basket = ({isBasket, onClose, basketData, onChangeData, onDeleteItem, onIncrPrd}) => {
