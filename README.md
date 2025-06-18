@@ -1,1 +1,1 @@
-# react_p2
+React JS doirasida II amaliyot: Shop Basket

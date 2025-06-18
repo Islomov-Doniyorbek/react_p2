@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    background: #faefe8;
+    // background: #261FB3;
+    overflow-x: hidden;
+
+    .navbar {
+        position: relative;
+        width: 100%;
+        padding: 8px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #261FB3;
+        .brand, .filtering {
+            // padding: 8px;
+            font-size: 22px;
+            color: #FBE4D6;
+        }
+        .filtering {
+            display: flex;
+            gap: 10px;
+            span {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+
+    .wrapper {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 8px;
+        .cards {
+            position: relative;
+            display: grid;
+            
+            gap: 15px;
+
+            .card {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                background: #261FB3;
+                border: 1.2px solid #261FB3;
+                border-radius: 8px;
+                color: #FBE4D6;
+                transition: all 0.7s;
+                &:hover {
+                    background: #FBE4D6;
+                    color: #261FB3;
+                    button {
+
+                        background: #261FB3;
+                        color: #FBE4D6;
+                    }
+                    .imgBox {
+                        border-color: #261FB3;
+                    }
+                    img {
+                        transform: scale(1.2);
+                    }
+                    h4 {
+                        border-color: #261FB3;
+                    }
+                }
+                .imgBox {
+                    overflow: hidden;
+                    position: relative;
+                    border: 4px solid #FBE4D6;
+                    border-radius: 8px;
+                    
+                }
+                img {
+                    position: relative;
+                    width: 100%;
+                    // border-radius: 8px;
+                    height: 100%;
+                    filter: contrast(1.4);
+                }
+                h4 {
+                    font-size: 1.4em;
+                    font-weight: normal;
+                    border-bottom: 1.1px solid #FBE4D6;
+                }
+                .cost {
+                    width: 100%;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                }
+                button {
+                    position: relative;
+                    font-size: 1.2em;
+                    border: 1.2px solid navajowhite;
+                    background: #FBE4D6;
+                    color: #261FB3;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    outline: none;
+                }
+                .desc {
+                    font-size: 12px;
+                }
+            }
+            .card.hide {
+                display: none;
+            }
+            .card.screen {
+                display: flex;
+            }
+        }
+    }
+    .basketBar {
+        position: absolute;
+        right: -500px;
+        top: 10px;
+        min-height: 180px;
+        background-color: #362ece;
+        color: #faefe8;
+        z-index: 2;
+        padding: 10px;
+        border-radius: 4px;
+        border: 1.2px solid #261FB3;
+        transition: all 0.7s;
+        &:hover {
+            background-color: #FBE4D6;
+            color: #261FB3;
+        }
+
+        .cardItems {
+            position: relative;
+
+            .cardItemBasket {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 4px;
+                align-items: center;
+                padding: 8px;
+                border-bottom: 1.1px solid #FBE4D6;
+                .prdData {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .pictBasket {
+                    width: 40px;
+                    height: 40px;
+                    border: 1.1px solid #FBE4D6;
+                    position: relative;
+                    border-radius: 50%;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+                        border-radius: 50%;
+                    }
+                }
+                .hisob {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                }
+                .counter {
+                    display: flex;
+                    // flex-direction: column;
+                    gap: 5px;
+                    button {
+                        width: 22px;
+                        height: 22px;
+                        border-radius: 50%;
+                        background-color: #261FB3;
+                        color: #FBE4D6;
+                        border: 1.1px solid #FBE4D6;
+                        outline: none;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        transition: 0.7s ease;
+                        &:hover {
+                            background-color: var(--i);
+                            color: #261FB3;
+                        }
+                        &:active {
+                            box-shadow: 0 0 10px 4px var(--i);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .basketBar.open {
+        right: 10px;
+    }
+
+}
+
+
+
+
+
+
+#root {
+    overflow-x: hidden;
+}
+
+
+
+
+
+@media (min-width: 1336px) {
+    .cards {
+        width: 90%;
+        grid-template-columns: repeat(5, 1fr);
+                .card {
+                  padding: 10px 12px;
+                  gap: 8px;
+                  .imgBox {
+                    height: 200px;
+                  }
+                }
+    }
+    .basketBar {
+        width: 400px;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 986px) and (max-width: 1336px) {
+    .cards {
+        width: 90%;
+        grid-template-columns: repeat(4, 1fr);
+        .card {
+            padding: 8px 10px;
+            gap: 6px;
+            .imgBox {
+                height: 180px;
+            }
+        }
+    }
+    .basketBar {
+        width: 400px;
+        font-size: 17px;
+    }
+}
+@media (min-width: 668px) and (max-width: 986px) {
+    .cards {
+        width: 90%;
+        grid-template-columns: repeat(3, 1fr);
+        .card {
+            padding: 7px 9px;
+            gap: 6px;
+            .imgBox {
+                height: 160px;
+            }
+        }
+    }
+    .basketBar {
+        width: 400px;
+        font-size: 16px;
+    }
+}
+@media (max-width: 668px) {
+    .cards {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        .card {
+            padding: 6px 8px;
+            gap: 5px;
+            .imgBox {
+                height: 140px;
+            }
+        }
+    }
+    .basketBar {
+        width: 320px;
+        font-size: 14px;
+    }
+}
